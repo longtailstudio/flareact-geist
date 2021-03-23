@@ -1,6 +1,6 @@
 import { Card, Grid, Page, Snippet } from '@geist-ui/react'
 
-export default function Index() {
+export default function Index(props) {
   return (
     <Page size="small">
       <Page.Header>
@@ -21,7 +21,7 @@ export default function Index() {
           <Grid xs={6}>
             <Card shadow>
               <h4>The Evil Rabbit</h4>
-              <p>shadow card.</p>
+              <p>{props.url}</p>
             </Card>
           </Grid>
         </Grid.Container>
@@ -33,4 +33,15 @@ export default function Index() {
       </Page.Footer>
     </Page>    
   );
+}
+
+export async function getEdgeProps({event}) {
+  const url = event.request.url;
+  return {
+    props: {
+      url,
+    },
+    // Revalidate these props once every 60 seconds
+    revalidate: 60,
+  };
 }
