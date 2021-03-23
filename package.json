@@ -1,0 +1,19 @@
+{
+  "name": "flareact-template",
+  "version": "1.0.0",
+  "author": "Josh Larson <jplhomer@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "flareact dev",
+    "build": "flareact build",
+    "deploy": "flareact publish"
+  },
+  "dependencies": {
+    "@geist-ui/react": "^2.1.3",
+    "flareact": "^1.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
